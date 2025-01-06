@@ -56,21 +56,16 @@ Chaque modèle est entraîné indépendamment pour toutes les étiquettes sélec
 - **main.py**
   - Orchestration complète du pipeline, du prétraitement des données à l'entraînement et l'évaluation des modèles.
 
-## Comment exécuter
-1. Clonez le dépôt :
-   ```bash
-   git clone https://github.com/OuniAchir/movie_plot_multi_label_classifier.git
-   cd movie_plot_multi_label_classifier
-   ```
+## Installation et exécution
 
-2. Installez les dépendances :
+1. Installez les dépendances :
    ```bash
    pip install pyspark matplotlib pandas
    ```
 
-3. Placez le fichier de données `mpst_full_data.csv` dans le répertoire racine.
+2. Placez le fichier de données `mpst_full_data.csv` dans le répertoire racine.
 
-4. Exécutez le script principal :
+3. Exécutez le script principal :
    ```bash
    python main.py
    ```
