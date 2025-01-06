@@ -3,6 +3,7 @@ from models.train_naive_bayes import train_naive_bayes
 from models.train_svm import train_svm
 from models.train_gbt import train_gbt
 from models.random_forest import train
+from models.logistic_regression import train_logistic_regression
 from evaluation import display_results
 
 # Initialisation
@@ -18,6 +19,7 @@ train_df, test_df, val_df = save_data(pivot_df, "train_data.parquet", "test_data
 nb_models, nb_results = train_naive_bayes(train_df, selected_tags)
 svm_models, svm_results = train_svm(train_df, selected_tags)
 gbt_models, gbt_results = train_gbt(train_df, selected_tags)
+lr_models, lr_results = train_logistic_regression(train_df, selected_tags)
 
 # Afficher les résultats
 print("\nNaive Bayes Results:")
@@ -26,3 +28,5 @@ print("\nSVM Results:")
 display_results(svm_results)
 print("\nGBT Results:")
 display_results(gbt_results)
+print("\n Logistic Regression Results:")
+display_results(lr_results)
