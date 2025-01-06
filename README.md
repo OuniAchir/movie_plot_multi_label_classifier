@@ -24,8 +24,9 @@ Chaque modèle est entraîné indépendamment pour toutes les étiquettes sélec
 
 2. **Ingénierie des caractéristiques**
    - Tokenisation du texte.
-   - Suppression des mots vides.
+   - Suppression des mots vides, ponctuation et des caractéres spéciaux
    - Transformation du texte en vecteurs de caractéristiques à l'aide de **HashingTF**.
+   - Exploration de word2vec et TF-IDF
 
 3. **Division des données**
    - Diviser les données en ensembles d'entraînement, de test et de validation.
@@ -79,11 +80,8 @@ Les performances des modèles sont comparées en utilisant la **précision moyen
 
 | Métrique           | Régression Logistique | Forêt Aléatoire | Gradient Boosted Trees | SVM   | Naive Bayes |
 |--------------------|-----------------------|-----------------|-------------------------|-------|-------------|
-| **Précision Moyenne** | 0.75186               | 0.81810         | 0.95561                 | 0.7102| 0.7029      |
+| **Précision Moyenne** | 0.75186               | 0.81810         | -                 | 0.7102| 95561      |
 | **Score F1 Moyen**  | 0.73529               | 0.74310         | -                       | -     | -           |
-
-## Visualisation
-- Le dépôt inclut des visualisations comparant les performances des modèles et l'évolution de la précision pendant l'entraînement.
 
 ## Détails de l'approche
 - **Méthode de transformation de problème** :
@@ -93,10 +91,3 @@ Les performances des modèles sont comparées en utilisant la **précision moyen
 ## Travaux futurs
 - Implémenter des techniques avancées de multi-étiquettes comme **Classifier Chains** ou **Label Powerset**.
 - Intégrer des modèles d'apprentissage profond pour l'extraction des caractéristiques et la classification.
-- Expérimenter avec des techniques supplémentaires d'ingénierie des caractéristiques, telles que **Word2Vec** ou **TF-IDF**.
-
-## Contribuer
-N'hésitez pas à forker ce dépôt, ouvrir des issues ou soumettre des pull requests pour contribuer au projet.
-
-## Licence
-Ce projet est sous licence MIT. Consultez le fichier `LICENSE` pour plus de détails.
