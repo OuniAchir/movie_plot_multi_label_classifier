@@ -2,7 +2,7 @@ from data_preprocessing import initialize_spark, load_and_preprocess_data, encod
 from models.train_naive_bayes import train_naive_bayes
 from models.train_svm import train_svm
 from models.train_gbt import train_gbt
-from models.random_forest import train
+from models.random_forest import train_random_forest
 from models.logistic_regression import train_logistic_regression
 from evaluation import display_results
 
@@ -20,6 +20,7 @@ nb_models, nb_results = train_naive_bayes(train_df, selected_tags)
 svm_models, svm_results = train_svm(train_df, selected_tags)
 gbt_models, gbt_results = train_gbt(train_df, selected_tags)
 lr_models, lr_results = train_logistic_regression(train_df, selected_tags)
+rf_models, rf_results = train_random_forest(train_df, selected_tags)
 
 # Afficher les résultats
 print("\nNaive Bayes Results:")
@@ -30,3 +31,5 @@ print("\nGBT Results:")
 display_results(gbt_results)
 print("\n Logistic Regression Results:")
 display_results(lr_results)
+print("\n Random Forest Results:")
+display_results(rf_results)
