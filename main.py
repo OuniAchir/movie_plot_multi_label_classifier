@@ -2,6 +2,7 @@ from data_preprocessing import initialize_spark, load_and_preprocess_data, encod
 from models.train_naive_bayes import train_naive_bayes
 from models.train_svm import train_svm
 from models.train_gbt import train_gbt
+from models.random_forest import train
 from evaluation import display_results
 
 # Initialisation
