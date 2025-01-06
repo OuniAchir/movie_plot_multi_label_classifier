@@ -63,9 +63,11 @@ Chaque modèle est entraîné indépendamment pour toutes les étiquettes sélec
    pip install pyspark matplotlib pandas
    ```
 
-2. Placez le fichier de données `mpst_full_data.csv` dans le répertoire racine.
-
-3. Exécutez le script principal :
+2. Placez le fichier de données `mpst_full_data.csv` dans le répertoire racine. ou sur kaggle:
+```bash
+   https://www.kaggle.com/datasets/cryptexcode/mpst-movie-plot-synopses-with-tags/data
+```
+4. Exécutez le script principal :
    ```bash
    python main.py
    ```
