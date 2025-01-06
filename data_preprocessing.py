@@ -1,5 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, explode, split
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import Tokenizer, StopWordsRemover, HashingTF
 
 def initialize_spark(app_name="MovieML"):
     spark = SparkSession.builder \
@@ -29,10 +31,7 @@ def load_and_preprocess_data(spark, file_path):
     df = df.withColumn('tags_split', explode(split('tags', ', ')))
     return df
 
-def encode_data(df, selected_tags):
-    from pyspark.ml import Pipeline
-    from pyspark.ml.feature import Tokenizer, StopWordsRemover, HashingTF
-    
+def encode_data(df, selected_tags):    
     tokenizer = Tokenizer(inputCol='plot_synopsis', outputCol='words')
     remover = StopWordsRemover(inputCol="words", outputCol="filtered")
     hashingTF = HashingTF(inputCol=remover.getOutputCol(), outputCol="features")
