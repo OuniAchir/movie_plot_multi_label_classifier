@@ -18,6 +18,14 @@ def load_and_preprocess_data(spark, file_path):
         .csv(file_path, inferSchema=True, header=True)
     
     df = df.where(col('imdb_id').like("tt%"))
+    # Filter rows with valid IMDb IDs
+    df = df.where(col('imdb_id').like("tt%"))
+    
+    # Lowercase the text, remove punctuation, and special characters
+    df = df.withColumn('plot_synopsis', lower(col('plot_synopsis')))
+    df = df.withColumn('plot_synopsis', regexp_replace(col('plot_synopsis'), r'[^a-z\s]', ''))
+    
+    # Split the tags into individual rows
     df = df.withColumn('tags_split', explode(split('tags', ', ')))
     return df
 
