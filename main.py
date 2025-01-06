@@ -22,7 +22,7 @@ gbt_models, gbt_results = train_gbt(train_df, selected_tags)
 lr_models, lr_results = train_logistic_regression(train_df, selected_tags)
 rf_models, rf_results = train_random_forest(train_df, selected_tags)
 
-# Afficher les résultats
+# Affichage des résultat
 print("\nNaive Bayes Results:")
 display_results(nb_results)
 print("\nSVM Results:")
