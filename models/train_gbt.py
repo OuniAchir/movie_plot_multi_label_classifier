@@ -2,6 +2,19 @@ from pyspark.ml.classification import GBTClassifier
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 
 def train_gbt(train_df, selected_tags):
+    """
+    Cette fonction entraîne des modèles de Gradient Boosted Trees (GBT) pour chaque étiquette spécifiée
+    et retourne les modèles entraînés ainsi que les résultats d'évaluation (accuracy).
+
+    Arguments :
+    - train_df : DataFrame Spark contenant les données d'entraînement.
+    - selected_tags : Liste des étiquettes (tags) pour lesquelles les modèles seront entraînés.
+
+    Retourne :
+    - model_gbt : Dictionnaire contenant les modèles GBT pour chaque étiquette.
+    - results_gbt : Dictionnaire contenant les métriques d'évaluation (accuracy) pour chaque étiquette.
+    """
+    
     model_gbt = {}
     results_gbt = {}
 
